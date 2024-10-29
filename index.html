@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i chat</title>
+    <script src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script>
+    const socket = io('http://localhost:8000')
+
+        const form = document.getElementById('send-container');
+        const messageinput = document.getElementById('messageinp');
+        const messagecontainer= document.querySelector(".container")
+        
+        const name = prompt("enter your name to join");
+        socket.emit('new-user-joined', name);</script>
+    <link rel="stylesheet" href="css/style.css">
+    <style></style>
+</head>
+<body>
+    <nav>
+        <img class="logo" src="chat.png.png" alt="">
+    </nav>
+    <div class="container">
+        <div class="message left">sreedhar: hry how r u</div>
+        <div class="message right">Agni:i am fine </div>
+    </div>
+    <div class="send">
+        <form action="#" id="send-container">
+            <input type="text" name="messageinp" id="messageinp">
+            <button class="btn" type="submit">send</button>
+        </form>
+    </div>
+</body>
+</html>
